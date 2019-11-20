@@ -32,3 +32,12 @@ class User {
 
 const newUser = new User('Or', 'Shalmayev');
 newUser.fullName(); // 'Or Shalmayev'
+
+// Demonstration Number #4 Semigroup
+
+const Sum = x => ({
+    x,
+    concat: other => Sum(x + other.x) 
+});
+
+let result = Sum(3).concat(Sum(5)); //Sum(8)
